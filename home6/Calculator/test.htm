@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css">
+        @font-face {
+            font-family: Albionic;
+            src: url(../font/a_Albionic.ttf);
+        }
+
+        .Calc {
+            width: 600px;
+            min-height: 350px;
+            /*height: 100%;*/
+            background-color: #4486F8;
+            margin: 50px auto;
+            overflow: auto;
+        }
+        .divAnswerLine {
+            width: 498px;
+            height: 20px;
+            text-align: center;
+            float: left;
+        }
+        .divAnswerLine > div {
+            width: 160px;
+            height: 20px;
+            float: left;
+            margin-top: 5px;
+        }
+    </style>
+
+
+</head>
+<body>
+<div class="Calc" id="Calc1">
+
+</div>
+
+<script>
+
+
+    for(var i = 0; i < 20; i++){
+        var divToAdd = document.createElement("div");
+        divToAdd.className = "divAnswerLine";
+        divToAdd.innerHTML = (
+            '<div id="task">pole1</div> \n' +
+            '<div><input type="number" class="answer" /></div> \n' +
+            '<div id="out"> pole3</div> \n');
+
+        document.getElementById("Calc1").appendChild(divToAdd);
+//        document.getElementById("Calc1").style.height = '500px';
+
+    }
+
+</script>
+</body>
+</html>

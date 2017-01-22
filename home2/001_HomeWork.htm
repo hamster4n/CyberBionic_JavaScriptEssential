@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        div {
+            width: 900px;
+            margin: 10px auto;
+        }
+
+        .task {
+            background-color: coral;
+            text-align: center;
+
+        }
+
+        .solution {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="task">
+            Задание 2. Дано два числа А и В где А<В.
+            Выведите на экран сумму всех чисел,
+            расположенных в числовом промежутке от А до В.
+            Выведите на экран все нечётные значения,
+            расположенные в числовом промежутке от А до В.
+    </div>
+    <div class="solution">
+            <script>
+                var A = 10; B = 21; sum = 0;
+                for(var i = A + 1; i < B; i++){
+                    sum += i;
+                }
+                        document.write("А = " + A + ", В = " + B + "<br/>");
+                        document.write("сумма всех чисел в промежутке от А до В(не включая) равна: " + sum + "<br/>");
+
+                document.write("нечётные значения промежутка от А до В не включая: <br/>");
+                for(var i = A + 1; i < B; i++){
+                    if(i%2 != 0){
+                        document.write(i + "<br/>");
+                    }
+                }
+            </script>
+    </div>
+
+    <div class="task">
+        Задание 3. Напишите программу, которая будет расчитывать и выводить на экран колличество возможных вариантов
+        доставки товара. Для решения задачи используйте факториан N!, расчитываемый с помощью цикла do-while.
+    </div>
+    <div class="solution">
+        <script>
+            var inputNumber = prompt("введите число, факториал которого необходимо посчитать: ");
+            var factorial = 1;
+Array()
+            if (inputNumber <1){
+                document.write("нужно было ввести число больше 1")
+            } else {
+                do {
+                    factorial *= inputNumber;
+                    inputNumber--;
+                }
+                while (inputNumber>0);
+            }
+            document.write("факториал введённого числа равен: " + factorial + "<br/>");
+
+        </script>
+    </div>
+
+    <div class="task">
+        Задание 4. Используя циклы нарисуйте в браузере с помощью пробелов ("&nbsp") и звёздочек (*):
+        прямоугольник, прямоугольный треугольник, равносторонний треугольник и ромб. (Пробелы имеют
+        ширину, отличную от звёздочки, потому заменил их на буку о)
+    </div>
+    <div class="solution">
+        <script>
+            var a = 5; b = 7;
+            document.write("прямоугольник <br/>");
+            for(var i = 0; i < a ;i++){
+                for(var j = 0; j < b; j++){
+                    if(i == 0 || i == a - 1 || j ==0 || j==b-1){
+                        document.write("x");
+                    } else {
+                        document.write("o");
+                    }
+                }
+                document.write("<br/>");
+            }
+
+
+            document.write("<br/> прямоугольный треугольник <br/>")
+            for(var i = 0; i < a; i++){
+                for(var j = 0; j < b; j++){
+                    if(j==0 || i==a-1 ){
+//       тут ещё должно быть условие, введённое во внутренний фор.
+                        document.write("x");
+                    } else {
+                        document.write("o");
+                    }
+                }
+                document.write("<br/>");
+            }
+
+
+            document.write("<br/> ромб <br/>")
+//            будет отрисован как четыре прямоугольных треугольника
+
+        </script>
+    </div>
+
+</body>
+</html>

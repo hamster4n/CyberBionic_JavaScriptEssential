@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        div {
+            width: 900px;
+            margin: 10px auto;
+        }
+
+        .task {
+            background-color: coral;
+            text-align: center;
+
+        }
+
+        .solution {
+            background-color: aqua;
+        }
+    </style>
+
+</head>
+<body>
+<div class="task">
+    Доп. задание. Создайте метод с именем Calculate, который
+    принимает в качестве параметров три целочисленных значения
+    и выводит на экран среднее арифметическое этих параметров. <br/>
+    <input type="button" value="запуск Доп.задачи" onclick="dopZadanie()" />
+</div>
+<div class="solution" id="dop">
+
+    <br/>
+
+    <script>
+
+
+        function dopZadanie() {
+            var a = prompt("введите первое число: <br/>"),
+                b = prompt("введите второе число: <br/>"),
+                c = prompt("введите третье число: <br/>");
+            a = parseInt(a);
+            b = parseInt(b);
+            c = parseInt(c);
+            document.getElementById('dop').innerHTML = ("было введено три числа: " + a + "," + b + ","
+            + c + "<br/>" + "результат работы функции: " + Calculate(a, b, c));
+
+
+        }
+
+        function Calculate(x, y, z) {
+            return (x + y + z) / 3;
+        }
+
+
+    </script>
+</div>
+
+
+<div class="task">
+    Задание 1. Создайте четыре функции для арифметический действий:
+    (Add - сложение, Sub - вычитание, Mul - умножение, Div - деление).
+    Каждая функция должна принимать два параметра и выводить на экран
+    результат вычисления. Функция деления должна делать проверку деления
+    на ноль. Пользователь вводит значения, над которыми хочет произвести операцию
+    и выбрать саму операцию. <br/>
+    <input type="button" value="запуск Задание 1" onclick="zadanieOne()" />
+</div>
+<div class="solution" id="one">
+
+    <br/>
+    <script>
+
+        function zadanieOne() {
+            var a = prompt("введите первое число: "),
+                b = prompt("введите второе число: "),
+                operator = prompt("введите операцию на выбор: + - * /"),
+                result = undefined;
+
+            a = parseInt(a);
+            b = parseInt(b);
+
+            switch (operator) {
+                case "+":
+                    result = Add(a, b);
+                    break;
+                case "-":
+                    result = Sub(a, b);
+                    break;
+                case "*":
+                    result = Mul(a, b);
+                    break;
+                case "/":
+                    result = Div(a, b);
+                    break;
+                default:
+                    document.getElementById('one').innerHTML = ("неверный оператор!!!");
+            }
+
+            if (result != undefined) {
+                document.getElementById('one').innerHTML =(a + " " + operator + " " + b + " = " + result);
+            }
+        }
+        function Add(a, b) {
+            return (a + b);
+        }
+        function Sub(a, b) {
+            return (a - b);
+        }
+        function Mul(a, b) {
+            return a * b;
+        }
+        function Div(a, b) {
+            if (b != 0) {
+                return a / b;
+            } else {
+                document.getElementById('one').innerHTML =("на ноль делить нельзя!");
+            }
+
+        }
+    </script>
+</div>
+
+<div class="task">
+    Задание 2. Напишите функцию, которая будет принимать число и определять:
+    1. Является ли введённое число положительным или отрицательным.
+    2. Является ли оно простым
+    3. Делится ли оно на 2, 5, 3, 6, 9 без остатка <br/>
+    <input type="button" value="запуск Задание 2" onclick="zadanieTwo()" />
+</div>
+<div class="solution" id="two">
+
+    <br/>
+    <script>
+
+        function zadanieTwo() {
+            var inputNumber = prompt("введите число: ");
+            inputNumber = parseInt(inputNumber);
+
+
+            document.getElementById('two').innerHTML =("положительное/отрицательное: " + isPositive(inputNumber) + "<br/>");
+            document.getElementById('two').innerHTML +=("простое/составное: " + isPrime(inputNumber) + "<br/>");
+            document.getElementById('two').innerHTML +=("число делится на 2, 5, 3, 6 и 9 без остатка: " + isDivided25369(inputNumber));
+        }
+
+
+
+        function isPositive(number) {
+            if (number > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function isPrime(number) {
+            if (number == 2 || number == 1) {
+                return true;
+            } else {
+                for (var i = 3; i < number; i += 2) {
+                    if (number % i == 0) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
+
+        function isDivided25369(number) {
+            if(number%2 == 0 && number%5 ==0 && number%3==0 && number%6==0 && number%9==0){
+                return true;
+            } else{
+                return false;
+            }
+        }
+    </script>
+</div>
+
+</body>
+</html>

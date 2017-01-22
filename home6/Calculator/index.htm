@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/css.css">
+    <script src="script/script.js"></script>
+
+</head>
+<body>
+<div class="Calc" id="Calc">
+    <div class="headCalc">Calculator</div>
+    <div class="operatorCalc">
+        <div><input type="checkbox" name="option1" value="1" class="checkbox">+</div>
+        <div><input type="checkbox" name="option2" value="2" class="checkbox">-</div>
+        <div><input type="checkbox" name="option3" value="3" class="checkbox">/</div>
+        <div><input type="checkbox" name="option4" value="4" class="checkbox">*</div>
+        <div><input type="number" id="number0"/></div>
+        <div><input type="button" value="Generate" onclick="generateTasks()"/></div>
+    </div>
+    <div class="bodyCalc">
+        <div class="bodyCalcBody">
+            <div id="outputDiv"></div>
+        </div>
+        <div class="bodyCalcButton" id="bodyCalcButton">
+            <input type="button" value="Inspection" onclick="inspectTasks()" id="inspectButton"/>
+        </div>
+    </div>
+</div>
+
+<div class="help">help</div>
+<div class="helpText_unvisible">
+    <ul>
+        <li>Выберите операторы, которые будут участвовать в создании примеров.</li>
+        <li>В поле ввода введите желаемое колличество примеров.</li>
+        <li>Нажмите кнопку Generate.</li>
+        <li>Напротив каждого примера введите свой ответ.</li>
+        <li>Нажмите кнопку Inspection для проверки.</li>
+    </ul>
+</div>
+
+</body>
+</html>
