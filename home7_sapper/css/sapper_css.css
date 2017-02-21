@@ -1,27 +1,88 @@
 body {
     background-color: darkgrey;
 }
-
-#cell {
-    width: 300px;
-    height: 300px;
-    background-color: #4486F8;
-    float: left;
-}
-#controlBlock {
-    width: 300px;
-    height: 300px;
-    background-color: chartreuse;
-    float: left;
-
+@font-face {
+    font-family: starwars;
+    src: url(../font/STARWARS.woff);
 }
 
-#inputButtonDiv {
-    width: 540px;
-    height: 560px;
-    background-color: chartreuse;
-    float: left;
+
+#workingSpace{
+    width: 1000px;
+    height: 600px;
+    background-image: url("../img/stars-bg.jpg");
+    margin: auto;
 }
+
+#header{
+    height: 35px;
+    background-color: black;
+    text-align: center;
+    padding-top: 15px;
+    font-family: starwars;
+    font-size: 30px;
+    color: white;
+}
+
+#menu{
+    height: 35px;
+    /*background-color: aquamarine;*/
+}
+
+#field{
+    height: 475px;
+    /*background-color: #4486F8;*/
+}
+
+#footer{
+    height: 40px;
+    /*background-color: azure;*/
+}
+
+#mines{
+    width: 120px;
+    height: 40px;
+    /*background-color: #4486F8;*/
+    float: right;
+}
+
+#time{
+    width: 120px;
+    height: 40px;
+    /*background-color: aqua;*/
+    float: right;
+}
+
+#difficult{
+    width: 120px;
+    height: 40px;
+    /*background-color: blueviolet;*/
+    float: right;
+}
+
+
+
+/*#cell {*/
+    /*width: 300px;*/
+    /*height: 300px;*/
+    /*background-color: #4486F8;*/
+    /*float: left;*/
+/*}*/
+
+/*#controlBlock {*/
+    /*width: 300px;*/
+    /*height: 300px;*/
+    /*background-color: chartreuse;*/
+    /*float: left;*/
+
+/*}*/
+
+/*#inputButtonDiv {*/
+    /*width: 540px;*/
+    /*height: 560px;*/
+    /*background-color: chartreuse;*/
+    /*float: left;*/
+/*}*/
 
 .button {
     width: 50px;
@@ -38,19 +99,20 @@ body {
     background: orange;
 }
 
-.buttonActiveFix{
+.buttonActiveFix {
     background-color: orange;
 }
-.divActiveButton{
+
+.divActiveButton {
     width: 38px;
     height: 48px;
     background-color: orange;
     text-align: center;
     float: left;
-    margin:   3px 2px 3px 2px;
+    margin: 3px 2px 3px 2px;
     padding: 1px 6px;
     border-width: 2px;
     line-height: 50px;
 
-
 }
+
