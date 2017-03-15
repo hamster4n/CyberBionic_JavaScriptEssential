@@ -1,5 +1,5 @@
-var arrButton = []; //массив всех кнопок
-var allBombs = 0; //колличество бомб в игре
+var arrButton = [], //массив всех кнопок
+    allBombs = 0; //колличество бомб в игре
 
 
 
@@ -100,28 +100,50 @@ function replaceButtonToDiv(numberButton, objButton) {
 }
 
 
-function generateGame(size) { //функция создаёт двумерный массив, в который забивает объекты кнопок
-    var totalNumberMines = size * 3, //резерв
-        currentNumberMines = 0; //резерв
-    for (var row = 1; row <= size; row++) {
+function generateGame(size1, size2) { //функция создаёт двумерный массив, в который забивает объекты кнопок
+    zeroingOutDivPlayingField();
+
+    var div = generatePlayingField(size1, size2);
+    document.getElementById('field').appendChild(div);
+
+    for (var row = 1; row <= size1; row++) {
         arrButton[row] = [];
-        for (var col = 1; col <= size; col++) {
-            var but = generateOneButton(row, col);
-            arrButton[row][col] = but;
-            document.getElementById('inputButtonDiv').appendChild(but);
+        for (var col = 1; col <= size2; col++) {
+            var newButton = generateOneButton(row, col);
+            arrButton[row][col] = newButton;
+            document.getElementById('divPlayingField').appendChild(newButton);
         }
     }
 
     //присваиваем расчёт бомб для всех кнопок - выделить в отдельную функцию?
-    for (var row = 1; row <= size; row++) {
-        for (var col = 1; col <= size; col++) {
+    for (var row = 1; row <= size1; row++) {
+        for (var col = 1; col <= size2; col++) {
             document.getElementById(row + "." + col).bomb = calculateNumberBombs(row, col);
         }
     }
-    //выдаём в "консоль" колличество бомб на игровом поле
-    document.getElementById('cell').innerHTML = ("всего бомб: " + allBombs + "<br/>");
+    //выдаём в "консоль" колличество бомб на игровом поле - временная штука. удалить
+    //document.getElementById('cell').innerHTML = ("всего бомб: " + allBombs + "<br/>");
 }
 
+
+
+//проверяем наличие игрового поля, и если таковое есть, то удаляем
+function zeroingOutDivPlayingField(){
+    var element = document.getElementById('divPlayingField');
+    if(element){
+        element.remove();
+    }
+}
+
+
+//для каждого уровня сложности функция создаёт игровое поле соотвествующего размера
+function generatePlayingField(size1, size2){
+    var div = document.createElement("div");
+    div.id = 'divPlayingField';
+    div.style.width = size1 * 27 + "px";
+    div.style.height = size2 * 27 + "px";
+    return div;
+}
 
 function generateOneButton(row, col) {
     var newButton = document.createElement("button");
@@ -144,6 +166,6 @@ function rndGenerator() {
 
 function soundClickBomb(){
     var audio = new Audio();
-    audio.src = "sound/open.mp3";
+    audio.src = "sound/ligthsword.mp3";
     audio.autoplay = true;
 }

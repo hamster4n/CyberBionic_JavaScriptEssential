@@ -7,37 +7,37 @@
     <link rel="stylesheet" type="text/css" href="css/menu.css">
     <script src="js/sapper_js.js"></script>
 </head>
-<body>
+<body onload="generateGame(10,16)">
 
-<div id = "workingSpace">
+<div id="workingSpace">
     <div id="header">StarWars Sapper</div>
     <div id="menu">
         <ul id="nav">
             <li>
                 <a href="#">Game</a>
                 <ul>
-                    <li><a href="#">New</a></li>
-                    <li><a href="#">Difficulty</a></li>
+                    <li><a onclick="generateGame(10,10)">New 10*10</a></li>
+                    <li><a onclick="generateGame(16,16)">New 16*16</a></li>
+                    <li><a onclick="generateGame(32,16)">New 32*16</a></li>
                     <li><a href="#">Sound</a></li>
                 </ul>
             </li>
             <li>
                 <a href="#">Help</a>
                 <ul>
-                    <li><a href="#">Help</a></li>
                     <li><a href="#">About</a></li>
                 </ul>
             </li>
         </ul>
-    </div>66
+    </div>
+
     <div id="field"></div>
     <div id="footer">
-        <div id="mines"></div>
-        <div id="time"></div>
-        <div id="difficult"></div>
+        <div id="mines">mines test</div>
+        <div id="time">time test</div>
+        <div id="difficult">difficult test</div>
     </div>
 </div>
-
 
 
 <!--<div id="inputButtonDiv">-->
@@ -45,11 +45,9 @@
 
 <!--<div id="cell"></div>-->
 <!--<div id="controlBlock">-->
-    <!--<input type="button" value="10x10" onclick="generateGame(10)"/>-->
-    <!--<input type="button" value="audio" onclick="soundClickBomb()">-->
+<!--<input type="button" value="10x10" onclick="generateGame(10)"/>-->
+<!--<input type="button" value="audio" onclick="soundClickBomb()">-->
 <!--</div>-->
-
-
 
 
 </body>

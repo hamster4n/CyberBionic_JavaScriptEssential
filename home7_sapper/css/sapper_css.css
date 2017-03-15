@@ -26,16 +26,31 @@ body {
 
 #menu{
     height: 35px;
-    /*background-color: aquamarine;*/
+
 }
 
 #field{
-    height: 475px;
-    /*background-color: #4486F8;*/
+    width: 900px;
+    height: 450px;
+    margin: 20px auto;
+    background-image: url("../img/back03.jpg");
+    position: relative;
 }
+
+#divPlayingField{
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
 
 #footer{
     height: 40px;
+    font-family: starwars;
+    color: white;
     /*background-color: azure;*/
 }
 
@@ -44,6 +59,7 @@ body {
     height: 40px;
     /*background-color: #4486F8;*/
     float: right;
+    padding-top: 10px;
 }
 
 #time{
@@ -51,6 +67,7 @@ body {
     height: 40px;
     /*background-color: aqua;*/
     float: right;
+    padding-top: 10px;
 }
 
 #difficult{
@@ -58,6 +75,7 @@ body {
     height: 40px;
     /*background-color: blueviolet;*/
     float: right;
+    padding-top: 10px;
 }
 
 
@@ -85,28 +103,33 @@ body {
 /*}*/
 
 .button {
-    width: 50px;
-    height: 50px;
-    margin: 3px 2px;
+    font-size: 1px;
+    width: 25px;
+    height: 25px;
+    margin: 1px;
     float: left;
+    padding: 0;
+    border: 0;
+    opacity: 0.5;
 }
 
 .button:hover {
-    background: yellow;
+    background: #4486F8;
+
 }
 
 .button:active {
-    background: orange;
+    background: #4486F8;
 }
 
 .buttonActiveFix {
-    background-color: orange;
+    background-color: #4486F8;
 }
 
 .divActiveButton {
-    width: 38px;
-    height: 48px;
-    background-color: orange;
+    width: 5px;
+    height: 5px;
+    background-color: #4486F8;
     text-align: center;
     float: left;
     margin: 3px 2px 3px 2px;
@@ -115,4 +138,5 @@ body {
     line-height: 50px;
 
 }
+
 
