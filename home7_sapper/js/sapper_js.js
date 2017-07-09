@@ -142,8 +142,23 @@ function generatePlayingField(size1, size2){
     div.id = 'divPlayingField';
     div.style.width = size1 * 27 + "px";
     div.style.height = size2 * 27 + "px";
+    setWallpaper(size1,size2);
     return div;
 }
+
+//установка фоновой картинки для поля каждого размера TODO подобрать другие заставки
+function setWallpaper(size1, size2){
+    var result;
+    if(size1 == 10){
+        result = 'url(img/back03.jpg)';
+    } else if (size1 == 16 && size2 == 16){
+        result = 'url(img/back06.jpg)';
+    } else {
+        result = 'url(img/back05.jpg)';
+    }
+    document.getElementById('field').style.backgroundImage = result;
+}
+
 
 function generateOneButton(row, col) {
     var newButton = document.createElement("button");
