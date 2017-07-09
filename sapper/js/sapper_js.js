@@ -11,7 +11,7 @@ var arrButton = [], //массив всех кнопок
 //поставить функцию, которая определит,что игрок выиграл (проверка при каждом ходе)
 //сделать стилизацию под звёздные войны. для каждого поля своя картинка и везде одинаковые звуки
 
-function openEmptyCells(numberButton) { //тут должна быть рекурсия!!!
+function openEmptyCells(numberButton) {
     var arr = numberButton.split("."),
         objButton = document.getElementById(numberButton),
         row = parseInt(arr[0]),
@@ -24,6 +24,7 @@ function openEmptyCells(numberButton) { //тут должна быть реку�
                     replaceButtonToDiv((i + "." + j), element);
                     openEmptyCells(i + "." + j);
                     //доработать условие. должны открываться и те, ячейки, в которых не ноль, но и нет бомбы
+                    //тут должна быть рекурсия!!!
                 }
             }
         }
@@ -41,6 +42,7 @@ function openAllCells() {
     }
 }
 
+//установка/снятие флага на ячейке
 function markUnmarkCell() {
     var numberButton = this.id,
         objButton = document.getElementById(numberButton);
@@ -78,7 +80,7 @@ function openOneCell() {
     } else {  //если бомбы в ячейке нет
         replaceButtonToDiv(numberButton, objButton); //открываем ячейку
         if (objButton.bomb == 0) {                       //если в ячейке ноль, то проверяем соседние на 0 и открываем их
-            document.getElementById('cell').innerHTML += ("нулевая!<br/>"); //удалить
+            //document.getElementById('cell').innerHTML += ("нулевая!<br/>"); //удалить
             openEmptyCells(numberButton);
         }
     }
@@ -99,8 +101,8 @@ function replaceButtonToDiv(numberButton, objButton) {
     document.getElementById('inputButtonDiv').replaceChild(newDiv, objButton);
 }
 
-
-function generateGame(size1, size2) { //функция создаёт двумерный массив, в который забивает объекты кнопок
+//функция создаёт двумерный массив, в который забивает объекты кнопок
+function generateGame(size1, size2) {
     zeroingOutDivPlayingField();
 
     var div = generatePlayingField(size1, size2);
