@@ -34,7 +34,8 @@ body {
     height: 450px;
     margin: 20px auto;
     background-image: url("../img/back03.jpg");
-    position: relative;
+    /*background-repeat: no-repeat; //todo что значит эта штука*/
+    /*position: relative;*/
 }
 
 #divPlayingField{
