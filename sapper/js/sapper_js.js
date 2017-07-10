@@ -98,7 +98,7 @@ function replaceButtonToDiv(numberButton, objButton) {
     } else {
         newDiv.innerHTML = objButton.bomb;
     }
-    document.getElementById('inputButtonDiv').replaceChild(newDiv, objButton);
+    document.getElementById('divPlayingField').replaceChild(newDiv, objButton);
 }
 
 //функция создаёт двумерный массив, в который забивает объекты кнопок

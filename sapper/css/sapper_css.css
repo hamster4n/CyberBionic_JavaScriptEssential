@@ -34,7 +34,6 @@ body {
     height: 450px;
     margin: 20px auto;
     background-image: url("../img/back03.jpg");
-    /*background-repeat: no-repeat; //todo что значит эта штука*/
     /*position: relative;*/
 }
 
@@ -52,7 +51,6 @@ body {
     height: 40px;
     font-family: starwars;
     color: white;
-    /*background-color: azure;*/
 }
 
 #mines{
@@ -80,29 +78,6 @@ body {
 }
 
 
-
-/*#cell {*/
-    /*width: 300px;*/
-    /*height: 300px;*/
-    /*background-color: #4486F8;*/
-    /*float: left;*/
-/*}*/
-
-/*#controlBlock {*/
-    /*width: 300px;*/
-    /*height: 300px;*/
-    /*background-color: chartreuse;*/
-    /*float: left;*/
-
-/*}*/
-
-/*#inputButtonDiv {*/
-    /*width: 540px;*/
-    /*height: 560px;*/
-    /*background-color: chartreuse;*/
-    /*float: left;*/
-/*}*/
-
 .button {
     font-size: 1px;
     width: 25px;
@@ -128,16 +103,13 @@ body {
 }
 
 .divActiveButton {
-    width: 5px;
-    height: 5px;
-    background-color: #4486F8;
+    width: 25px;
+    height: 25px;
+    background-color: #F4A460;
     text-align: center;
     float: left;
-    margin: 3px 2px 3px 2px;
-    padding: 1px 6px;
+    margin: 1px;
     border-width: 2px;
-    line-height: 50px;
-
 }
 
 
